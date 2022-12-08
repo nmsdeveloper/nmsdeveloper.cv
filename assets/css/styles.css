@@ -340,6 +340,32 @@ img {
   margin-bottom: 0.25rem;
 }
 
-/*==================== Home ====================*/
+/* Scroll Top */
+.scrolltop {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 1rem;
+  bottom: -20%;
+  padding: 0.3rem;
+  background-color: var(--container-color-alt);
+  box-shadow: 0 1px 5px hsla(228, 67%, 53%, 0.25);
+  border-radius: 0.4rem;
+  visibility: hidden;
+  z-index: var(--z-tooltip);
+  transition: 0.4s ease-in-out;
+}
+.scrolltop-icon {
+  font-size: 1.2rem;
+  color: var(--first-color);
+}
+
+/* Show Scroll Top */
+.show-scroll {
+  visibility: visible;
+  bottom: 5rem;
+}
+
 /*==================== Home ====================*/
 /*==================== Home ====================*/
