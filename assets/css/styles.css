@@ -9,7 +9,7 @@
   --body-font: "Poppins", sans-serif;
   --header-height: 3rem;
 
-  /*==================== Colors ====================*/
+  /* Colors */
   --first-color: hsl(228, 67%, 53%);
   --title-color: #0b0a0a;
   --text-color: #403a3a;
@@ -18,7 +18,7 @@
   --container-color-alt: #f0efef;
   --body-color: #ecf0f3;
 
-  /*==================== Font Size ====================*/
+  /* Font Size */
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
@@ -26,13 +26,34 @@
   --small-font-size: 0.875rem;
   --smaller-font-size: 0.813rem;
 
-  /*==================== Font Weight ====================*/
+  /* Font Weight */
   --font-medium: 500;
   --font-semi-bold: 600;
 
-  /*==================== Z-Index ====================*/
+  /* Z-Index */
   --z-tooltip: 10;
   --z-fixed: 100;
+}
+
+/*==================== Dark Color Theme ====================*/
+body.dark-theme {
+  /* Colors */
+  --title-color: #f2f2f2;
+  --text-color: #bfbfbf;
+  --container-color: #212121;
+  --container-color-alt: #181616;
+  --body-color: #2b2b2b;
+}
+
+/*==================== Font Size Scale C.V ====================*/
+body.scale-cv {
+  /* Font Size */
+  --h1-font-size: 0.938rem;
+  --h2-font-size: 0.938rem;
+  --h3-font-size: 0.875rem;
+  --normal-font-size: 0.813rem;
+  --small-font-size: 0.75rem;
+  --smaller-font-size: 0.688rem;
 }
 
 /*==================== Base ====================*/
@@ -44,6 +65,80 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Button Dark/Light */
+.change-theme {
+  position: absolute;
+  display: flex;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  top: 2.2rem;
+  right: 0;
+  cursor: pointer;
+}
+.change-theme:hover {
+  color: var(--first-color);
+}
+
+/* Generate PDF Button */
+.generate-pdf {
+  position: absolute;
+  display: none;
+  top: 2.2rem;
+  left: 0;
+  font-size: 1.2rem;
+  color: var(--first-color);
+  cursor: pointer;
+}
+
+/* Reduce Size and Print on A4 Sheet */
+.scale-cv .change-theme,
+.scale-cv .generate-pdf {
+  display: none;
+}
+.scale-cv .container {
+  max-width: 595px;
+}
+.scale-cv .section {
+  padding: 1.5rem 0 0.8rem;
+}
+.scale-cv .section-title {
+  margin-bottom: 0.75rem;
+}
+.scale-cv .resume-left,
+.scale-cv .resume-right {
+  padding: 0 1rem;
+}
+.scale-cv .home-img {
+  width: 90px;
+  height: 90px;
+}
+.scale-cv .home-container {
+  gap: 1.5rem;
+}
+.scale-cv .home-data,
+.scale-cv .education-data {
+  gap: 0.25rem;
+}
+.scale-cv .home-address,
+.scale-cv .socials-container {
+  gap: 0.75rem;
+}
+.scale-cv .home-icon,
+.scale-cv .socials-icon,
+.scale-cv .interests-icon {
+  font-size: 1rem;
+}
+.scale-cv .education-year {
+  padding-right: 0.5rem;
+}
+
+.scale-cv .skills-name {
+  margin-bottom: 0.5rem;
+}
+.scale-cv .interests-container {
+  column-gap: 2rem;
 }
 
 body {
@@ -279,7 +374,6 @@ img {
 
 /*==================== Skills & Languages ====================*/
 .skills-content,
-.references-container,
 .languages-content {
   grid-template-columns: repeat(2, 1fr);
 }
@@ -317,7 +411,7 @@ img {
   font-size: var(--h3-font-size);
 }
 .references-subtitle,
-.references-links {
+.references-link {
   font-size: var(--smaller-font-size);
 }
 .references-link {
@@ -367,5 +461,66 @@ img {
   bottom: 5rem;
 }
 
-/*==================== Home ====================*/
-/*==================== Home ====================*/
+/*==================== Responsive Media Queries ====================*/
+/* Small Device */
+@media screen and (max-width: 320px) {
+  .nav-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 0.5rem;
+  }
+}
+
+/* Medium Device */
+
+/* Large Device */
+@media screen and (min-width: 968px) {
+  body {
+    margin: 3rem 0;
+  }
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .header,
+  .scrolltop {
+    display: none;
+  }
+
+  .generate-pdf {
+    display: inline-block;
+  }
+
+  .resume {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    background-color: var(--container-color);
+    box-shadow: 0 0 8px rgba(13, 12, 12, 0.15);
+  }
+  .resume-left {
+    background-color: var(--container-color-alt);
+  }
+  .resume-left,
+  .resume-right {
+    padding: 0 1.5rem;
+  }
+  .section-title,
+  .profile-description {
+    text-align: initial;
+  }
+
+  .home-container {
+    gap: 1.5rem;
+  }
+  .home-button-mobil {
+    display: none;
+  }
+  .languages-content {
+    grid-template-columns: repeat(3, max-content);
+    column-gap: 3.5rem;
+  }
+  .interests-container {
+    grid-template-columns: repeat(3, max-content);
+    column-gap: 3.5rem;
+  }
+}
