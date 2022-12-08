@@ -1,0 +1,326 @@
+/*==================== Fonts ====================*/
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-500.ttf"), url("../fonts/Poppins-600.ttf");
+}
+
+/*==================== Variables ====================*/
+:root {
+  --body-font: "Poppins", sans-serif;
+  --header-height: 3rem;
+
+  /*==================== Colors ====================*/
+  --first-color: hsl(228, 67%, 53%);
+  --title-color: #0b0a0a;
+  --text-color: #403a3a;
+  --text-color-light: #707070;
+  --container-color: #fafafa;
+  --container-color-alt: #f0efef;
+  --body-color: #ecf0f3;
+
+  /*==================== Font Size ====================*/
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.813rem;
+
+  /*==================== Font Weight ====================*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*==================== Z-Index ====================*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*==================== Base ====================*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+  background-color: var(--body-color);
+  margin: 0 0 var(--header-height) 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+ul,
+p {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*==================== Current Styles ====================*/
+.container {
+  max-width: 968px;
+  width: calc(100% - 3rem);
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+.grid {
+  display: -moz-grid;
+  display: -ms-grid;
+  display: grid;
+  gap: 1.5rem;
+}
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: var(--body-color);
+  left: 0;
+  bottom: 0;
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1);
+  z-index: var(--z-fixed);
+  transition: 0.4s ease-in-out;
+}
+.section {
+  padding: 1.5rem 0;
+}
+.section-title {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-semi-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.35rem;
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/*==================== Navbar ====================*/
+.nav {
+  display: flex;
+  height: var(--header-height);
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 968px) {
+  .nav-menu {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: -100%;
+    padding: 2rem 1.5rem;
+    background-color: var(--body-color);
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    z-index: var(--z-fixed);
+    transition: 0.4s ease-in-out;
+  }
+}
+
+.nav-logo,
+.nav-toggle {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+.nav-logo span {
+  color: var(--first-color);
+}
+.nav-toggle {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.nav-item {
+  text-align: center;
+}
+.nav-list {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  color: var(--text-color-light);
+  transition: 0.2s ease-in-out;
+}
+.nav-link:hover {
+  color: var(--title-color);
+}
+.nav-icon {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Active Link */
+.active-link {
+  color: var(--first-color);
+}
+
+/* Show menu */
+.show-menu {
+  bottom: var(--header-height);
+}
+
+/*==================== Home ====================*/
+.home {
+  position: relative;
+}
+.home-container {
+  gap: 3rem;
+}
+.home-data {
+  gap: 0.5rem;
+  text-align: center;
+}
+.home-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 1rem;
+  justify-self: center;
+  margin-bottom: 0.5rem;
+}
+.home-title {
+  font-size: var(--h1-font-size);
+}
+.home-profession {
+  font-size: var(--normal-font-size);
+  margin-bottom: 0.5rem;
+}
+.home-address {
+  gap: 1rem;
+}
+.home-information {
+  display: flex;
+  align-items: center;
+  font-size: var(--small-font-size);
+}
+.home-icon {
+  font-size: 1.2rem;
+  margin-right: 0.25rem;
+}
+.home-button-mobil {
+  display: inline-block;
+  font-weight: var(--font-medium);
+  color: var(--title-color);
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  border: 2px solid var(--text-color);
+  border-radius: 0.25rem;
+  transition: 0.4s ease-in-out;
+}
+.home-button-mobil:hover {
+  color: var(--container-color);
+  background-color: var(--text-color);
+}
+
+/*==================== Social ====================*/
+.social-container {
+  grid-template-columns: max-content;
+  gap: 1rem;
+}
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+}
+.social-link:hover {
+  color: var(--title-color);
+}
+.social-icon {
+  font-size: 1.2rem;
+  margin-right: 0.25rem;
+}
+
+/*==================== Profile ====================*/
+.profile-description {
+  text-align: center;
+}
+
+/*==================== Education ====================*/
+.education-data {
+  gap: 0.5rem;
+}
+.education-title {
+  font-size: var(--h3-font-size);
+}
+.education-studies {
+  font-size: var(--small-font-size);
+  color: var(--title-color);
+}
+.education-year {
+  font-size: var(--smaller-font-size);
+}
+
+/*==================== Skills & Languages ====================*/
+.skills-content,
+.references-container,
+.languages-content {
+  grid-template-columns: repeat(2, 1fr);
+}
+.languages-content {
+  gap: 0;
+}
+.skills-name,
+.languages-name {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.skills-circle,
+.languages-circle {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: var(--text-color);
+  border-radius: 50%;
+  margin-right: 0.75rem;
+}
+.languages-level div {
+  font-size: var(--smaller-font-size);
+}
+
+/*==================== References ====================*/
+.references-content {
+  gap: 0.25rem;
+}
+.references-subtitle {
+  color: var(--text-color-light);
+}
+.references-title {
+  font-size: var(--h3-font-size);
+}
+.references-subtitle,
+.references-links {
+  font-size: var(--smaller-font-size);
+}
+.references-link {
+  color: var(--first-color);
+}
+
+/*==================== Home ====================*/
+/*==================== Home ====================*/
+/*==================== Home ====================*/
+/*==================== Home ====================*/
