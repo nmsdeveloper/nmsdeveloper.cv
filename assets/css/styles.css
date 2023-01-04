@@ -1,7 +1,13 @@
 /*==================== Fonts ====================*/
 @font-face {
   font-family: "Poppins";
-  src: url("../fonts/Poppins-500.ttf"), url("../fonts/Poppins-600.ttf");
+  src: url("../fonts/Poppins-600.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-500.ttf");
+  font-weight: 500;
 }
 
 /*==================== Variables ====================*/
